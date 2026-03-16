@@ -1,0 +1,5 @@
+opencv-python
+Pillow
+deepface
+tf-keras
+mediapipe

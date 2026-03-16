@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  face-id-system:
+    build: .
+    container_name: face_id_app
+    volumes:
+      - .:/app
+      - /tmp/.x11-unix:/tmp/.x11-unix # for gui on linux
+    environment:
+      - display=${display:-:0} # redirecting display
+    devices:
+      - "/dev/video0:/dev/video0" # mapping webcam (linux only)
+    restart: always
